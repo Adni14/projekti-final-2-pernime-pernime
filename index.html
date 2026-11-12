@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="sq">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#3c6b7d" />
+    <meta
+      name="description"
+      content="Portali i prindërve për të parë notat, mungesat dhe vërejtjet e nxënësit."
+    />
+    <title>Portali i prindërve | Ditari Online</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell parent-portal">
+      <header class="topbar">
+        <a class="brand" href="./" aria-label="Ditari Online">
+          <span class="brand-mark" aria-hidden="true">D</span>
+          <span>Ditari Online</span>
+        </a>
+        <span class="portal-label">Portali i prindërve</span>
+      </header>
+
+      <main>
+        <section class="hero parent-hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">Informacioni shkollor i fëmijës suaj</p>
+            <h1 id="hero-title">Ndiqni përparimin, hap pas hapi.</h1>
+            <p class="lead">
+              Shkruani kodin e hyrjes që ju dha mësuesi për të parë të dhënat e nxënësit.
+            </p>
+          </div>
+          <div class="parent-hero-mark" aria-hidden="true">
+            <span class="parent-hero-icon">D</span>
+            <span>Ditari<br />Online</span>
+          </div>
+        </section>
+
+        <section class="panel lookup-panel" aria-labelledby="lookup-title">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Hyrje e sigurt</p>
+              <h2 id="lookup-title">Gjeni të dhënat e nxënësit</h2>
+            </div>
+          </div>
+          <form id="lookupForm" class="lookup-form">
+            <label for="parentCode">
+              <span>Kodi i hyrjes</span>
+              <input
+                id="parentCode"
+                name="parentCode"
+                type="text"
+                placeholder="p.sh. DT-XXXXXXXX"
+                autocomplete="off"
+                autocapitalize="characters"
+                spellcheck="false"
+                maxlength="40"
+                required
+              />
+            </label>
+            <button id="lookupButton" type="submit" class="primary-btn">
+              Shiko të dhënat
+            </button>
+          </form>
+          <p id="lookupMessage" class="form-message" role="status" aria-live="polite">
+            Kodi gjendet te mësuesi i nxënësit.
+          </p>
+        </section>
+
+        <section id="studentRecord" class="panel record-panel" aria-labelledby="studentName" hidden>
+          <div class="record-heading">
+            <div>
+              <p class="eyebrow">Të dhënat e nxënësit</p>
+              <h2 id="studentName"></h2>
+              <p id="studentClass" class="student-class"></p>
+            </div>
+            <button id="changeCodeButton" class="secondary-btn" type="button">
+              Kërko nxënës tjetër
+            </button>
+          </div>
+
+          <div class="record-summary">
+            <article class="summary-card">
+              <span class="summary-label">Mungesat</span>
+              <strong id="absenceCount"></strong>
+            </article>
+            <article class="summary-card">
+              <span class="summary-label">Vlerësimi i mësuesit</span>
+              <strong id="teacherRemark"></strong>
+            </article>
+          </div>
+
+          <section class="record-section" aria-labelledby="grades-title">
+            <div class="record-section-heading">
+              <div>
+                <p class="eyebrow">Rezultatet mësimore</p>
+                <h3 id="grades-title">Notat sipas lëndëve</h3>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table class="parent-grade-table">
+                <thead>
+                  <tr><th scope="col">Lënda</th><th scope="col">Nota</th></tr>
+                </thead>
+                <tbody id="gradesBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section id="teacherNoteSection" class="teacher-note" aria-labelledby="teacher-note-title" hidden>
+            <p class="eyebrow">Shënim nga mësuesi</p>
+            <h3 id="teacher-note-title">Vërejtje</h3>
+            <p id="teacherNote"></p>
+          </section>
+        </section>
+      </main>
+
+      <footer class="parent-footer">
+        <span class="brand-mark" aria-hidden="true">D</span>
+        <p>Ditari Online <span>·</span> Portali i prindërve</p>
+      </footer>
+    </div>
+  </body>
+</html>
